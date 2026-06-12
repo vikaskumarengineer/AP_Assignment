@@ -1,0 +1,11 @@
+========== ORDER DETAILS ==========
+Order ID: ORD-6db4776b
+Customer ID: vk
+Order Type: REGULAR
+Status: PROCESSING
+Date: 2026-05-16T13:22:01.816279300
+Total Amount: $19.98
+
+--- Items ---
+USB Cable x2 - $19.98
+===================================

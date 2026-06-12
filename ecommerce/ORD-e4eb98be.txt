@@ -1,0 +1,11 @@
+========== ORDER DETAILS ==========
+Order ID: ORD-e4eb98be
+Customer ID: vikas_kumar
+Order Type: REGULAR
+Status: PAYMENT_COMPLETED
+Date: 2026-05-07T11:56:55.532089500
+Total Amount: $49.95
+
+--- Items ---
+USB Cable x5 - $49.95
+===================================

@@ -1,0 +1,11 @@
+========== ORDER DETAILS ==========
+Order ID: ORD-08ea2534
+Customer ID: 22
+Order Type: REGULAR
+Status: PAYMENT_COMPLETED
+Date: 2026-05-15T19:40:17.937366
+Total Amount: $449.97
+
+--- Items ---
+Headphones x3 - $449.97
+===================================

@@ -1,0 +1,11 @@
+========== ORDER DETAILS ==========
+Order ID: ORD-a4af5a1d
+Customer ID: f
+Order Type: REGULAR
+Status: PAYMENT_COMPLETED
+Date: 2026-05-07T11:46:16.859046700
+Total Amount: $599.96
+
+--- Items ---
+Headphones x4 - $599.96
+===================================
