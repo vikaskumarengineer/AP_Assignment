@@ -1,1 +1,87 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function TodoApp() {
+            const [todos, setTodos] = React.useState([]);
+            const [input, setInput] = React.useState('');
+
+            const addTodo = () => {
+                if (input.trim()) {
+                    setTodos([...todos, input]);
+                    setInput('');
+                }
+            };
+
+            const deleteTodo = (indexToDelete) => {
+                setTodos(todos.filter((_, index) => index !== indexToDelete));
+            };
+
+            return (
+                <div style={{maxWidth: '400px', margin: '50px auto', padding: '20px'}}>
+                    <h1>📝 Todo List</h1>
+                    
+                    <div style={{display: 'flex', gap: '10px', marginBottom: '20px'}}>
+                        <input 
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && addTodo()}
+                            placeholder="Add todo..."
+                            style={{flex: 1, padding: '8px'}}
+                        />
+                        <button onClick={addTodo} style={{padding: '8px 16px', background: 'green', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer'}}>
+                            Add
+                        </button>
+                    </div>
+
+                    <div>
+                        <h3>My Todos ({todos.length})</h3>
+                        <ul style={{listStyle: 'none', padding: 0}}>
+                            {todos.map((todo, i) => (
+                                <li key={i} style={{
+                                    padding: '8px', 
+                                    borderBottom: '1px solid #eee',
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'center'
+                                }}>
+                                    <span>{i+1}. {todo}</span>
+                                    <button 
+                                        onClick={() => deleteTodo(i)}
+                                        style={{
+                                            padding: '4px 12px',
+                                            background: '#ff4444',
+                                            color: 'white',
+                                            border: 'none',
+                                            borderRadius: '4px',
+                                            cursor: 'pointer',
+                                            fontSize: '14px'
+                                        }}
+                                    >
+                                        Delete
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                        {todos.length === 0 && <p>No todos yet! ✨</p>}
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<TodoApp />);
+    </script>
+</body>
+</html>
